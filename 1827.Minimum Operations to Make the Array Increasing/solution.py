@@ -5,8 +5,9 @@ class Solution:
             # Disregard first item
             if i == 0:
                 continue
-            while nums[i] <= nums[i-1]:
-                nums[i] += 1
-                counter += 1
+            if nums[i-1] >= nums[i]:
+                dif = nums[i-1] - nums[i] + 1
+                nums[i] += dif
+                counter += dif
             continue
         return counter
